@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderTopComponent } from './core/header/header-top/header-top.component';
+import { HeaderTopComponent } from './core/components/header/header-top/header-top.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
-  declarations: [AppComponent, HeaderTopComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, CoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })

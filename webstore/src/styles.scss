@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Helvetica";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeue.ttf");
+}
+@font-face {
+  font-family: "HelveticaBold";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueBold.ttf");
+}
+@font-face {
+  font-family: "HelveticaBI";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueBoldItalic.ttf");
+}
+@font-face {
+  font-family: "HelveticaConBlack";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueCondensedBlack.ttf");
+}
+@font-face {
+  font-family: "HelveticaConBold";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueCondensedBold.ttf");
+}
+@font-face {
+  font-family: "HelveticaIt";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueItalic.ttf");
+}
+@font-face {
+  font-family: "HelveticaItLight";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueLightItalic.ttf");
+}
+@font-face {
+  font-family: "HelveticaLight";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueLight.ttf");
+}
+@font-face {
+  font-family: "HelveticaMedium";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueMedium.ttf");
+}
+
+@font-face {
+  font-family: "HelveticaUlLigth";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueUltraLight.ttf");
+}
+@font-face {
+  font-family: "HelveticaUlLigthIt";
+  src: url("./assets/fonts/helvetica_neue_ttf_font/HelveticaNeueUltraLightItalic.ttf");
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica", sans-serif;
+}
+
+html {
+  min-width: 1200px;
+  max-width: 1920px;
+}
