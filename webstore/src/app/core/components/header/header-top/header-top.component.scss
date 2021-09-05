@@ -12,30 +12,56 @@
       margin-right: 5px;
     }
   }
-  .contacts-container {
+
+  .header-info {
     display: flex;
     align-items: center;
 
-    .more {
-      padding: 10px;
-      padding-bottom: 10px;
-      cursor: pointer;
+    .contacts-container {
+      position: relative;
+      width: 200px;
+
+      .preshown-caontacts {
+        display: flex;
+        position: relative;
+        right: 140px;
+      }
+      .contacts-dropdown {
+        position: absolute;
+        top: -15px;
+        left: 38px;
+        z-index: 11;
+
+        .mat-expansion-panel {
+          box-shadow: none;
+        }
+        .mat-expansion-panel-header {
+          height: 45px;
+          padding: 0 50px;
+        }
+      }
+
+      .more {
+        padding: 10px;
+        padding-bottom: 10px;
+        cursor: pointer;
+      }
+
+      .fa-viber {
+        margin-right: 10px;
+      }
     }
 
-    .fa-viber {
-      margin-right: 10px;
-    }
-  }
+    .business-time {
+      display: flex;
+      flex-direction: column;
+      margin-right: 30px;
+      padding-left: 5px;
+      border-left: 2px solid#DCDCDC;
 
-  .business-time {
-    display: flex;
-    flex-direction: column;
-    margin-right: 30px;
-    padding-left: 5px;
-    border-left: 2px solid#DCDCDC;
-
-    .operate-hours {
-      text-align: center;
+      .operate-hours {
+        text-align: center;
+      }
     }
   }
 

@@ -1,0 +1,65 @@
+.account {
+  margin-right: 50px;
+  cursor: pointer;
+  font-family: "HelveticaBold";
+  position: relative;
+
+  .profile-snippet {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 252px;
+    height: 254px;
+    left: -56%;
+    top: 28px;
+    bottom: -122px;
+
+    background-color: #fff9e4;
+    z-index: 10;
+    border-radius: 5%;
+    color: #613c3d;
+
+    .singIn {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: center;
+
+      .signIn-button {
+        margin-top: 15px;
+        width: 140px;
+        height: 40px;
+        border: none;
+        background-color: #613c3d;
+        color: #fff9e4;
+        border-radius: 5px;
+        font-family: "HelveticaBold";
+      }
+    }
+
+    .personal-interaction {
+      margin-top: 20px;
+      margin-left: 20px;
+
+      .login-cart {
+        // display: flex;
+        // flex-direction: row;
+        // align-items: baseline;
+
+        .separate-border {
+          width: 200px;
+          border: 1px solid #a3a3a3;
+          margin: 8px 0;
+          border-radius: 25%;
+        }
+
+        .cart {
+          .cart-text {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}

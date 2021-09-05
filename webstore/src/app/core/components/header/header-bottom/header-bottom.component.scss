@@ -1,0 +1,13 @@
+.header-bottom {
+  display: flex;
+  justify-content: center;
+  color: #ffeba9;
+  background-color: #4169e1;
+  height: 70px;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+  }
+}
