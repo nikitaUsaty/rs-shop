@@ -37,6 +37,10 @@
     align-items: center;
     align-self: center;
 
+    i {
+      font-size: 30px;
+    }
+
     .signIn-button {
       margin-top: 15px;
       width: 140px;
@@ -83,12 +87,33 @@
   height: 400px;
 }
 
+.cart {
+  display: flex;
+  align-items: baseline;
+  font-size: 25px;
+  cursor: pointer;
+
+  .cart-text {
+    font-family: "HelveticaBold";
+
+    padding-left: 15px;
+  }
+}
+
 .close__button {
   color: #800020;
   background-color: transparent;
   border: none;
   outline: none;
-  font-family: "HelveticaMedium";
-  font-size: 30px;
+  font-family: "HelveticaBI";
+  font-size: 25px;
   cursor: pointer;
+}
+.login-pop-list {
+  font-size: 25px;
+  span {
+    font-family: "HelveticaBold";
+
+    padding-left: 15px;
+  }
 }

@@ -82,6 +82,11 @@ body {
       padding: 0 24px;
       overflow: hidden;
       background: #fff9e4;
+      border-radius: 25px;
+    }
+
+    .mat-dialog-actions {
+      justify-content: flex-end;
     }
   }
 }

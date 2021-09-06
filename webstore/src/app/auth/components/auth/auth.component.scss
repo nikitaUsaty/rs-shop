@@ -1,5 +1,5 @@
-$button-color: #613c3d;
-
+$button-color: #000;
+///#613c3d
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -7,6 +7,7 @@ $button-color: #613c3d;
 
   h3 {
     font-family: "HelveticaBold";
+    font-size: 20px;
   }
 
   .form {
