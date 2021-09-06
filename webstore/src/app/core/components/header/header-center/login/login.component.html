@@ -1,15 +1,29 @@
 <div class="account">
-  <span><i class="far fa-user-circle"></i>ACCOUNT</span>
-  <div class="profile-snippet">
-    <div class="singIn">
-      <i class="fas fa-user-circle"></i>
-      <button class="signIn-button">Log In</button>
-    </div>
-    <div class="personal-interaction">
-      <div class="login-cart">
-        <app-cart></app-cart>
-        <div class="separate-border"></div>
+  <button
+    mat-button
+    [matMenuTriggerFor]="menu"
+    #menuTrigger
+    class="open-account__button"
+  >
+    <i class="far fa-user-circle"></i> ACCOUNT
+  </button>
+  <mat-menu #menu="matMenu">
+    <div class="profile-snippet">
+      <div class="singIn">
+        <i class="fas fa-user-circle"></i>
+        <button class="signIn-button" (click)="openDialog()">Log In</button>
+      </div>
+      <div class="personal-interaction">
+        <div class="login-cart">
+          <app-cart></app-cart>
+          <div class="separate-border"></div>
+        </div>
+        <div class="personal-goods">
+          <app-favorite></app-favorite>
+          <app-viewed></app-viewed>
+          <app-compare-list></app-compare-list>
+        </div>
       </div>
     </div>
-  </div>
+  </mat-menu>
 </div>

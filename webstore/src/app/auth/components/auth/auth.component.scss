@@ -1,0 +1,41 @@
+$button-color: #613c3d;
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+
+  h3 {
+    font-family: "HelveticaBold";
+  }
+
+  .form {
+    position: relative;
+    z-index: 1;
+
+    max-width: 360px;
+  }
+  .form input {
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+  .form button {
+    text-transform: uppercase;
+    outline: 0;
+    background: $button-color;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4 ease;
+    cursor: pointer;
+  }
+}

@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MainpageModule } from './mainpage/mainpage.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +19,7 @@ import { MainpageModule } from './mainpage/mainpage.module';
     HttpClientModule,
     BrowserAnimationsModule,
     MainpageModule,
+    AuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

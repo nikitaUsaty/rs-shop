@@ -19,18 +19,21 @@
 
     .contacts-container {
       position: relative;
-      width: 200px;
+      width: 330px;
 
       .preshown-caontacts {
         display: flex;
         position: relative;
-        right: 140px;
       }
       .contacts-dropdown {
         position: absolute;
         top: -15px;
-        left: 38px;
+        left: 168px;
         z-index: 11;
+
+        .mat-panel-title {
+          width: 50px;
+        }
 
         .mat-expansion-panel {
           box-shadow: none;

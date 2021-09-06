@@ -64,3 +64,24 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", sans-serif;
 }
+
+.cdk-overlay-container {
+  .mat-menu-panel {
+    min-width: 0;
+    max-width: 280px;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(100vh - 48px);
+    border-radius: 4px;
+    outline: 0;
+    min-height: 64px;
+  }
+
+  .cdk-global-overlay-wrapper {
+    .mat-dialog-container {
+      padding: 0 24px;
+      overflow: hidden;
+      background: #fff9e4;
+    }
+  }
+}
