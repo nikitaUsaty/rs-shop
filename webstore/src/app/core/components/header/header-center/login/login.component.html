@@ -11,7 +11,13 @@
     <div class="profile-snippet">
       <div class="singIn">
         <i class="fas fa-user-circle"></i>
-        <button class="signIn-button" (click)="openDialog()">Log In</button>
+        <p class="userName">{{ userName }}</p>
+        <button class="signIn-button" (click)="openDialog()" *ngIf="!userName">
+          Log In
+        </button>
+        <button class="signIn-button" (click)="logOut()" *ngIf="userName">
+          Log Out
+        </button>
       </div>
       <div class="personal-interaction">
         <div class="login-cart">

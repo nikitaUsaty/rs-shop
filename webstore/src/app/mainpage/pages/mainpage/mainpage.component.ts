@@ -22,7 +22,5 @@ export class MainpageComponent implements OnInit {
       image:
         'https://cdn21vek.by/img/galleries/670/660/preview_b/rcsk250m20w_beko_5ba395b802436.jpeg',
     },
-    { image: 'https://gsr.dev/material2-carousel/assets/demo.png' },
-    { image: 'https://gsr.dev/material2-carousel/assets/demo.png' },
   ];
 }

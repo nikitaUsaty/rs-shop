@@ -5,3 +5,19 @@ mat-carousel {
     color: #0e0206;
   }
 }
+
+.carousel {
+  .carousel-list {
+    .carousel-slide {
+      height: 100%;
+      position: absolute;
+      z-index: auto;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+}
+.car-img {
+  background-size: contain;
+}

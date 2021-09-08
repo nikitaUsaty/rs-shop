@@ -1,11 +1,15 @@
 <div class="login-page">
   <h3>LOGIN</h3>
   <div class="form">
-    <form #loginForm="ngForm" class="login-form">
+    <form
+      #loginForm="ngForm"
+      class="login-form"
+      (ngSubmit)="submitForm(loginForm.value)"
+    >
       <div class="form-group">
         <input
           type="text"
-          name="name"
+          name="login"
           placeholder="username"
           required
           ngModel
@@ -21,8 +25,20 @@
         />
       </div>
       <div class="form-group">
-        <button type="submit" [disabled]="loginForm.invalid">Login</button>
+        <button
+          mat-raised-button
+          [mat-dialog-close]="true"
+          type="submit"
+          [disabled]="loginForm.invalid"
+        >
+          Login
+        </button>
       </div>
     </form>
+  </div>
+  <div class="separate-border"></div>
+  <div class="registration">
+    New here?
+    <span> Register</span>
   </div>
 </div>

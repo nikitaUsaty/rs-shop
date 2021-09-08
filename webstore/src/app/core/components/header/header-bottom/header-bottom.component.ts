@@ -15,7 +15,6 @@ export class HeaderBottomComponent implements OnInit {
   ngOnInit(): void {
     this.catService.getCategories().subscribe((val: any) => {
       this.categories = val;
-      console.log(this.categories);
     });
   }
 }

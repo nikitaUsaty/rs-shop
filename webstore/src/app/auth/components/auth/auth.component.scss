@@ -1,5 +1,5 @@
 $button-color: #000;
-///#613c3d
+
 .login-page {
   width: 360px;
   padding: 8% 0 0;
@@ -17,6 +17,7 @@ $button-color: #000;
     max-width: 360px;
   }
   .form input {
+    border-radius: 4px;
     outline: 0;
     background: #fff;
     width: 100%;
@@ -26,17 +27,44 @@ $button-color: #000;
     box-sizing: border-box;
     font-size: 14px;
   }
+
+  .form input:valid {
+    background-color: #e7f1fe;
+  }
   .form button {
     text-transform: uppercase;
     outline: 0;
     background: $button-color;
     width: 100%;
     border: 0;
+    border-radius: 4px;
     padding: 15px;
     color: #ffffff;
     font-size: 14px;
     -webkit-transition: all 0.3 ease;
     transition: all 0.4 ease;
+    cursor: pointer;
+  }
+
+  .separate-border {
+    width: 359px;
+    border: 1px solid #a3a3a3;
+    margin: 15px 0;
+    border-radius: 25%;
+  }
+}
+
+.registration {
+  display: flex;
+  justify-content: center;
+  font-family: "HelveticaLight";
+
+  span {
+    margin-left: 5px;
+  }
+
+  span:hover {
+    color: #613c3d;
     cursor: pointer;
   }
 }

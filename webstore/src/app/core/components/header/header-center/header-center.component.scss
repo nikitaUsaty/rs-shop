@@ -3,18 +3,18 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   color: #ffeba9;
   background-color: #4169e1;
   font-size: 20px;
   font-family: "HelveticaBold";
+  padding-top: 20px;
 
   i {
     margin: 5px;
   }
 
   .logo {
-    margin-left: 50px;
     font-family: "HelveticaConBlack";
     font-size: 50px;
     color: #aaf0d1;
@@ -23,7 +23,7 @@
   .catalogue {
     display: flex;
     justify-content: flex-end;
-    width: 30%;
+
     font-family: "HelveticaBold";
 
     button {
@@ -38,12 +38,17 @@
       cursor: pointer;
       box-sizing: border-box;
       border-radius: 40px;
-      margin-right: 70px;
+      margin-right: -70px;
+      margin-left: -30px;
       background: #4169e1;
       color: #ffeba9;
       transition: 0.2s ease;
       font-family: "HelveticaBold";
     }
+  }
+
+  .search {
+    margin-left: -20px;
   }
   .account-section {
     margin-right: 80px;

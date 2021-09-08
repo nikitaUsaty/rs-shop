@@ -19,16 +19,22 @@
   flex-direction: column;
   position: absolute;
   width: 252px;
-  height: 254px;
+  height: fit-content;
   left: -67px;
   top: 10px;
   bottom: -122px;
   transition: 10s ease-in-out;
-
+  padding-bottom: 15px;
   background-color: #fff9e4;
   z-index: 10;
   border-radius: 5%;
   color: #613c3d;
+
+  .userName {
+    margin-top: 15px;
+    font-size: 25px;
+    color: #000;
+  }
 
   .singIn {
     margin-top: 12px;
@@ -47,7 +53,7 @@
       height: 40px;
       border: none;
       background-color: #613c3d;
-      color: #fff9e4;
+      color: #ffffff;
       border-radius: 5px;
       font-family: "HelveticaBold";
       cursor: pointer;

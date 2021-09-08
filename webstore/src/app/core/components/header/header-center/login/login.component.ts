@@ -1,6 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, EventEmitter, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { Subscription } from 'rxjs';
+import { AuthService } from 'src/app/auth/services/auth.service';
+import { IUserModel } from 'src/app/shared/models/user.interface';
 
 @Component({
   selector: 'app-login',
@@ -11,20 +14,32 @@ export class LoginComponent implements OnInit {
   @ViewChild('menuTrigger')
   menuTrigger!: MatMenuTrigger;
 
-  constructor(public dialog: MatDialog) {}
+  public userName: string = '';
+
+  userSub!: Subscription;
+
+  constructor(public dialog: MatDialog, private authServ: AuthService) {}
 
   openDialog() {
-    // #docregion focus-restoration
     const dialogRef = this.dialog.open(loginMenu, {
       restoreFocus: false,
     });
-
-    // Manually restore focus to the menu trigger since the element that
-    // opens the dialog won't be in the DOM any more when the dialog closes.
-    dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());
-    // #enddocregion focus-restoration
   }
-  ngOnInit(): void {}
+
+  public logOut(): void {
+    this.userName = '';
+    this.authServ.removeToken();
+  }
+
+  ngOnInit(): void {
+    this.authServ.getUser();
+    this.userSub = this.authServ.user.subscribe((val: any) => {
+      this.userName = val?.firstName;
+    });
+  }
+  ngOnDestroy() {
+    this.userSub.unsubscribe();
+  }
 }
 
 @Component({

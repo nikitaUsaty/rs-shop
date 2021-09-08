@@ -19,6 +19,7 @@ import { CompareListComponent } from './components/header/header-center/compare-
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthModule } from '../auth/auth.module';
+import { AuthService } from '../auth/services/auth.service';
 @NgModule({
   declarations: [
     HeaderTopComponent,
@@ -44,5 +45,6 @@ import { AuthModule } from '../auth/auth.module';
     MatMenuModule,
   ],
   exports: [HeaderComponent, FooterComponent],
+  providers: [AuthService],
 })
 export class CoreModule {}
