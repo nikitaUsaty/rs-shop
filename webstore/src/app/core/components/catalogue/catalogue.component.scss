@@ -1,0 +1,36 @@
+.catalogue-cont {
+  max-width: 44%;
+  background-color: #4169e0;
+  margin-left: 310px;
+  border-radius: 4px;
+
+  .catalogue {
+    height: 190px;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 15px;
+    position: relative;
+    .catalogue-categories {
+      position: absolute;
+      left: 32px;
+    }
+
+    .separate-border {
+      border-right: 1px solid slategray;
+      border-radius: 4px;
+    }
+    .catalogue-subcategories {
+      position: absolute;
+      right: 249px;
+    }
+
+    ul {
+      width: 160px;
+      li {
+        list-style: none;
+        cursor: pointer;
+        margin: 1px 0;
+      }
+    }
+  }
+}

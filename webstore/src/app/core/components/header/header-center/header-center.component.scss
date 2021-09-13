@@ -9,6 +9,7 @@
   font-size: 20px;
   font-family: "HelveticaBold";
   padding-top: 20px;
+  position: relative;
 
   i {
     margin: 5px;
@@ -60,5 +61,13 @@
   .cart {
     font-size: 30px;
     cursor: pointer;
+  }
+
+  .catalogue-container {
+    position: absolute;
+    top: 90px;
+    width: 100%;
+    // left: 5%;
+    z-index: 1;
   }
 }

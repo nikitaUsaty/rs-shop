@@ -1,4 +1,4 @@
-interface subCategories {
+export interface ISubCategories {
   id: string;
   name: string;
 }
@@ -6,5 +6,5 @@ interface subCategories {
 export interface ICategoriesModel {
   id: string;
   name: string;
-  subCategories: subCategories;
+  subCategories: ISubCategories[];
 }

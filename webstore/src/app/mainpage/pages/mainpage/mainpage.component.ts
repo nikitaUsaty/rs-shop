@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as e from 'express';
+import { CategoriesService } from 'src/app/shared/services/categories.service';
 
 @Component({
   selector: 'app-mainpage',
@@ -6,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mainpage.component.scss'],
 })
 export class MainpageComponent implements OnInit {
-  constructor() {}
+  constructor(private service: CategoriesService) {}
+  public goods!: any[];
 
   ngOnInit(): void {}
   slides = [

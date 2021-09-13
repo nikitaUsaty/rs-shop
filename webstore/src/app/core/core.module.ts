@@ -8,7 +8,7 @@ import { FooterComponent } from './pages/footer/footer.component';
 import { HeaderBottomComponent } from './components/header/header-bottom/header-bottom.component';
 import { HeadCatListComponent } from './components/header/header-bottom/head-cat-list/head-cat-list.component';
 import {
-  loginMenu,
+  loginMenuComponent,
   LoginComponent,
 } from './components/header/header-center/login/login.component';
 import { CartComponent } from './components/header/header-center/cart/cart.component';
@@ -20,6 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/services/auth.service';
+import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     HeaderTopComponent,
@@ -35,7 +37,8 @@ import { AuthService } from '../auth/services/auth.service';
     FavoriteComponent,
     ViewedComponent,
     CompareListComponent,
-    loginMenu,
+    loginMenuComponent,
+    CatalogueComponent,
   ],
   imports: [
     CommonModule,
@@ -43,6 +46,7 @@ import { AuthService } from '../auth/services/auth.service';
     MatExpansionModule,
     MatDialogModule,
     MatMenuModule,
+    FormsModule,
   ],
   exports: [HeaderComponent, FooterComponent],
   providers: [AuthService],

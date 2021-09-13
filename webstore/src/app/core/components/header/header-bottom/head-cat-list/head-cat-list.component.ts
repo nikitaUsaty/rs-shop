@@ -6,10 +6,8 @@ import { ICategoriesModel } from 'src/app/shared/models/categories.interface';
   templateUrl: './head-cat-list.component.html',
   styleUrls: ['./head-cat-list.component.scss'],
 })
-export class HeadCatListComponent implements OnInit {
+export class HeadCatListComponent {
   @Input()
   category!: ICategoriesModel;
   constructor() {}
-
-  ngOnInit(): void {}
 }

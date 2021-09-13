@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   constructor(public dialog: MatDialog, private authServ: AuthService) {}
 
   openDialog() {
-    const dialogRef = this.dialog.open(loginMenu, {
+    const dialogRef = this.dialog.open(loginMenuComponent, {
       restoreFocus: false,
     });
   }
@@ -37,14 +37,16 @@ export class LoginComponent implements OnInit {
       this.userName = val?.firstName;
     });
   }
+
   ngOnDestroy() {
     this.userSub.unsubscribe();
   }
 }
 
 @Component({
+  // eslint-disable-next-line @angular-eslint/component-selector
   selector: 'dialog-from-menu-dialog',
   templateUrl: 'login-menu.html',
   styleUrls: ['./login.component.scss'],
 })
-export class loginMenu {}
+export class loginMenuComponent {}

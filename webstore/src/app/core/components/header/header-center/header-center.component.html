@@ -1,8 +1,7 @@
 <div class="header-center">
   <div class="logo">"LOGO"</div>
-
   <div class="catalogue">
-    <button>CATALOGUE</button>
+    <button (click)="toggleDisplayDiv()">CATALOGUE</button>
   </div>
   <div class="search"><app-search-main></app-search-main></div>
   <div class="account-section">
@@ -10,5 +9,8 @@
     <div class="cart">
       <i class="fas fa-shopping-bag"></i>
     </div>
+  </div>
+  <div class="catalogue-container" [hidden]="isShowDiv">
+    <app-catalogue></app-catalogue>
   </div>
 </div>

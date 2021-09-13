@@ -11,7 +11,7 @@
     <div class="profile-snippet">
       <div class="singIn">
         <i class="fas fa-user-circle"></i>
-        <p class="userName">{{ userName }}</p>
+        <p class="userName" *ngIf="userName">{{ userName }}</p>
         <button class="signIn-button" (click)="openDialog()" *ngIf="!userName">
           Log In
         </button>

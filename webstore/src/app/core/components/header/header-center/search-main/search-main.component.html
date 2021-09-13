@@ -1,7 +1,23 @@
 <div class="header-search">
   <div class="search-container">
     <form>
-      <input type="text" placeholder="Search.." name="search" />
+      <input
+        type="text"
+        placeholder="Search.."
+        name="search"
+        autocomplete="off"
+        [(ngModel)]="searchStr"
+        (ngModelChange)="this.searchValueUpdate.next($event)"
+      />
     </form>
+  </div>
+  <div class="search-reslut" *ngIf="isShown">
+    <div class="search-item" *ngFor="let card of searchCard">
+      <div class="search-img"><img src="{{ card.imageUrls[0] }}" alt="" /></div>
+      <div class="search-info">
+        <div class="name">{{ card.name }}</div>
+        <div class="price">{{ card.price }} BYN</div>
+      </div>
+    </div>
   </div>
 </div>
