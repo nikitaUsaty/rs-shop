@@ -1,0 +1,8 @@
+<div class="container" *ngIf="cat">
+  <h1>{{ cat.id }}</h1>
+  <div class="sub-container">
+    <div class="sub" *ngFor="let c of subcat">
+      {{ c.id }}
+    </div>
+  </div>
+</div>

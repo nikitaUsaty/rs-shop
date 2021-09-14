@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ICategoriesModel } from 'src/app/shared/models/categories.interface';
 import { CategoriesService } from 'src/app/shared/services/categories.service';
 
@@ -8,7 +9,10 @@ import { CategoriesService } from 'src/app/shared/services/categories.service';
   styleUrls: ['./header-bottom.component.scss'],
 })
 export class HeaderBottomComponent implements OnInit {
-  constructor(private catService: CategoriesService) {}
+  constructor(
+    private catService: CategoriesService,
+    private activatedRouter: ActivatedRoute
+  ) {}
 
   public categories!: ICategoriesModel[];
 

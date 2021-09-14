@@ -22,6 +22,7 @@ import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/services/auth.service';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 @NgModule({
   declarations: [
     HeaderTopComponent,
@@ -47,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatMenuModule,
     FormsModule,
+    RouterModule,
   ],
   exports: [HeaderComponent, FooterComponent],
   providers: [AuthService],

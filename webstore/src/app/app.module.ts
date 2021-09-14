@@ -10,9 +10,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainpageModule } from './mainpage/mainpage.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
+import { CategoriesComponent } from './categories/categories.component';
+import { CategoriesService } from './shared/services/categories.service';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, CategoriesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
