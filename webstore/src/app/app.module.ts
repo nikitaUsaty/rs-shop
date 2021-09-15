@@ -12,9 +12,10 @@ import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesService } from './shared/services/categories.service';
+import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 
 @NgModule({
-  declarations: [AppComponent, CategoriesComponent],
+  declarations: [AppComponent, CategoriesComponent, SubCategoriesComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

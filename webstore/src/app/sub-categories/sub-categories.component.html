@@ -1,0 +1,20 @@
+<div class="item-page-container">
+  <div class="items-card-container">
+    <div class="item" *ngFor="let item of items">
+      <div class="item-img"><img src="{{ item.imageUrls[0] }}" alt="" /></div>
+      <div class="item-title">{{ item.name }}</div>
+      <div class="item-price">{{ item.price }}BYN</div>
+      <div class="item-rating">rating: {{ item.rating }}</div>
+      <div class="item-btns">
+        <button class="addToCart">
+          add <i class="fas fa-shopping-cart"></i>
+        </button>
+        <div class="fav">
+          <i class="far fa-star"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--
+<div class="sort">sort by: price popularity</div> -->

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import {
   ICategoriesModel,
@@ -20,7 +20,8 @@ export class CategoriesComponent implements OnInit {
 
   constructor(
     private activateRoute: ActivatedRoute,
-    private service: CategoriesService
+    private service: CategoriesService,
+    private router: Router
   ) {
     this.subscription = activateRoute.params.subscribe((params) => {
       this.id = params['id'];

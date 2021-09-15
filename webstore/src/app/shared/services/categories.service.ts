@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -26,11 +26,9 @@ export class CategoriesService {
     );
   }
 
-  public test(id: string) {
-    let catID = this.route.snapshot.paramMap.get('id');
-    console.log(catID);
-
-    if (!catID) return;
-    return this.getSubCatList(id);
+  public test(id: string, subID: string) {
+    return this.http.get(
+      `http://localhost:3004/goods/category/${id}/${subID}?start=1&count=14`
+    );
   }
 }
