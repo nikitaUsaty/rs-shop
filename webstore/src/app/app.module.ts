@@ -13,9 +13,15 @@ import { FormsModule } from '@angular/forms';
 import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesService } from './shared/services/categories.service';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
+import { SortPipe } from './pipes/sort.pipe';
 
 @NgModule({
-  declarations: [AppComponent, CategoriesComponent, SubCategoriesComponent],
+  declarations: [
+    AppComponent,
+    CategoriesComponent,
+    SubCategoriesComponent,
+    SortPipe,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

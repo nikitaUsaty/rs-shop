@@ -20,7 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/services/auth.service';
-import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { CatalogueComponent } from './components/header/header-center/catalogue/catalogue.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 @NgModule({
@@ -28,6 +28,7 @@ import { RouterModule } from '@angular/router';
     HeaderTopComponent,
     HeaderCenterComponent,
     HeaderComponent,
+    HeaderBottomComponent,
     SearchMainComponent,
     SearchMainComponent,
     FooterComponent,

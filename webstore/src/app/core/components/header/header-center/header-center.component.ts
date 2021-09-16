@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-center',
@@ -8,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderCenterComponent implements OnInit {
   isShowDiv = true;
 
-  toggleDisplayDiv() {
+  public toggleDisplayDiv() {
     this.isShowDiv = !this.isShowDiv;
   }
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  public navigateToMain(): void {
+    this.router.navigate(['/home']);
+  }
 }

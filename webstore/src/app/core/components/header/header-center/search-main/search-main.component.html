@@ -13,7 +13,10 @@
   </div>
   <div class="search-reslut" *ngIf="isShown">
     <div class="search-item" *ngFor="let card of searchCard">
-      <div class="search-img"><img src="{{ card.imageUrls[0] }}" alt="" /></div>
+      <div
+        class="search-img"
+        [ngStyle]="{ 'background-image': 'url(' + card.imageUrls[0] + ')' }"
+      ></div>
       <div class="search-info">
         <div class="name">{{ card.name }}</div>
         <div class="price">{{ card.price }} BYN</div>

@@ -6,6 +6,7 @@ import {
   ICategoriesModel,
   ISubCategories,
 } from '../models/categories.interface';
+import { IItem } from '../models/iitem.model';
 import { IUserModel } from '../models/user.interface';
 
 @Injectable({
@@ -26,9 +27,9 @@ export class CategoriesService {
     );
   }
 
-  public test(id: string, subID: string) {
-    return this.http.get(
-      `http://localhost:3004/goods/category/${id}/${subID}?start=1&count=14`
+  public test(id: string, subID: string): Observable<IItem[]> {
+    return this.http.get<IItem[]>(
+      `http://localhost:3004/goods/category/${id}/${subID}`
     );
   }
 }

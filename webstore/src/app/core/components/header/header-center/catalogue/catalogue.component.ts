@@ -5,6 +5,7 @@ import {
   ISubCategories,
 } from 'src/app/shared/models/categories.interface';
 import { CategoriesService } from 'src/app/shared/services/categories.service';
+import { HeaderCenterComponent } from '../header-center.component';
 
 @Component({
   selector: 'app-catalogue',
@@ -16,7 +17,10 @@ export class CatalogueComponent implements OnInit {
 
   public subCat!: ISubCategories[];
 
-  constructor(private service: CategoriesService) {}
+  constructor(
+    private service: CategoriesService,
+    private catalogueComp: HeaderCenterComponent
+  ) {}
 
   ngOnInit(): void {
     this.service.getCategories().subscribe((val) => {
@@ -29,5 +33,9 @@ export class CatalogueComponent implements OnInit {
     console.log(category);
 
     this.subCat = category.subCategories;
+  }
+
+  public closeDropDown(): void {
+    this.catalogueComp.toggleDisplayDiv();
   }
 }

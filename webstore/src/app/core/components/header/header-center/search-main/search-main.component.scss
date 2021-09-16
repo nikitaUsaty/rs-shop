@@ -49,13 +49,13 @@
       margin-bottom: 20px;
 
       .search-img {
-        background-size: cover;
-
-        img {
-          margin: 0 20px;
-          max-width: 65px;
-          max-height: 65px;
-        }
+        margin: 0 20px;
+        width: 80px;
+        height: 80px;
+        background-image: url("../../../../../../assets/icons/qustionmark.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .search-info {

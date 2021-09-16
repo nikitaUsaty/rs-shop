@@ -1,31 +1,57 @@
 .item-page-container {
   display: flex;
-  justify-content: center;
-  margin: 40px 0;
+  flex-direction: column;
+  margin: 20px 40px;
+
+  .sort {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    vertical-align: top;
+    margin-right: 140px;
+    margin-bottom: 20px;
+
+    .sorting {
+      color: #000;
+      cursor: pointer;
+    }
+    span {
+      font-family: "HelveticaMedium";
+      color: rgb(145, 139, 139);
+      margin-right: 7px;
+    }
+  }
+
   .items-card-container {
     display: flex;
     flex-wrap: wrap;
     margin: 0 100px;
+
     .item {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-      // border: 1px solid gray;
-      max-width: 210px;
+      border-radius: 4px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+      width: 270px;
       max-height: 500px;
       text-align: center;
       margin: 0 10px;
+      margin-bottom: 40px;
 
-      img {
+      .item-img {
         margin-top: 20px;
-        width: 150px;
-        height: 150px;
-        background-color: rgb(160, 150, 150);
-        justify-self: center;
+        width: 120px;
+        height: 120px;
+        background-image: url("../../assets/icons/qustionmark.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
       }
 
       .item-title {
+        margin: 10px 0;
         color: #4169e1;
         font-size: 16px;
         cursor: pointer;
@@ -33,6 +59,12 @@
 
       .item-price {
         font-size: 20px;
+      }
+
+      .item-rating {
+        margin-top: 5px;
+        color: rgb(145, 139, 139);
+        font-family: "HelveticaIt";
       }
 
       .item-btns {
@@ -58,6 +90,22 @@
           cursor: pointer;
         }
       }
+    }
+  }
+
+  .show-more {
+    margin: 0 auto;
+
+    button {
+      margin-top: 15px;
+      width: 140px;
+      height: 40px;
+      border: none;
+      background-color: #613c3d;
+      color: #ffffff;
+      border-radius: 5px;
+      font-family: "HelveticaBold";
+      cursor: pointer;
     }
   }
 }

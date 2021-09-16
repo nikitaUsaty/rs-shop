@@ -6,6 +6,7 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 
 const routes: Routes = [
   { path: '', component: MainpageComponent },
+  { path: 'home', component: MainpageComponent },
   {
     path: ':id',
     component: CategoriesComponent,
