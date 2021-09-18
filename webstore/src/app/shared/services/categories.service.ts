@@ -27,9 +27,13 @@ export class CategoriesService {
     );
   }
 
-  public test(id: string, subID: string): Observable<IItem[]> {
+  public getItems(id: string, subID: string): Observable<IItem[]> {
     return this.http.get<IItem[]>(
       `http://localhost:3004/goods/category/${id}/${subID}`
     );
+  }
+
+  public getItem(id: string): Observable<IItem> {
+    return this.http.get<IItem>(`http://localhost:3004/goods/item/${id}`);
   }
 }

@@ -2,7 +2,7 @@
   <div class="sort">
     <span>sort:</span>
     <span class="sorting" (click)="sortPrice()">price</span>
-    <span class="sorting" (click)="sortRate()">popularity</span>
+    <span class="sorting" (click)="sortRate()">rating</span>
   </div>
   <div class="items-card-container">
     <div
@@ -15,8 +15,16 @@
         class="item-img"
         [ngStyle]="{ 'background-image': 'url(' + item.imageUrls[0] + ')' }"
       ></div>
-      <div class="item-title">{{ item.name }}</div>
-      <div class="item-price">{{ item.price }}BYN</div>
+      <div
+        class="item-title"
+        [routerLink]="[item.id]"
+        routerLinkActive="active"
+      >
+        {{ item.name }}
+      </div>
+      <div class="item-price">
+        {{ item.price }}<span class="price-uni">&#x20BD;</span>
+      </div>
       <div class="item-rating">rating {{ item.rating }}</div>
       <div class="item-btns">
         <button class="addToCart">

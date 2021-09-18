@@ -14,6 +14,10 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoriesService } from './shared/services/categories.service';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { SortPipe } from './pipes/sort.pipe';
+import { ItemComponent } from './item/item.component';
+import { SwiperModule } from 'swiper/angular';
+import { BreadcrumbModule } from 'xng-breadcrumb';
+import { BreadcrumbService } from 'xng-breadcrumb';
 
 @NgModule({
   declarations: [
@@ -21,6 +25,7 @@ import { SortPipe } from './pipes/sort.pipe';
     CategoriesComponent,
     SubCategoriesComponent,
     SortPipe,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,7 @@ import { SortPipe } from './pipes/sort.pipe';
     MainpageModule,
     AuthModule,
     FormsModule,
+    SwiperModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

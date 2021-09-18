@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import {
   ICategoriesModel,
@@ -17,9 +18,13 @@ export class CatalogueComponent implements OnInit {
 
   public subCat!: ISubCategories[];
 
+  public catID = 'appliances';
+  public subCatID!: string;
+
   constructor(
     private service: CategoriesService,
-    private catalogueComp: HeaderCenterComponent
+    private catalogueComp: HeaderCenterComponent,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -30,12 +35,16 @@ export class CatalogueComponent implements OnInit {
   }
 
   public getSubCat(category: ICategoriesModel): void {
-    console.log(category);
-
     this.subCat = category.subCategories;
+    this.catID = category.id;
   }
 
   public closeDropDown(): void {
     this.catalogueComp.toggleDisplayDiv();
+  }
+
+  public navToItems(sub: any): void {
+    const id = this.catID;
+    this.router.navigate([`${id}/${sub}`]);
   }
 }

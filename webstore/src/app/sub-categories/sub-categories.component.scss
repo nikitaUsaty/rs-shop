@@ -59,6 +59,12 @@
 
       .item-price {
         font-size: 20px;
+
+        .price-uni {
+          font-size: 17px;
+          color: #918b8b;
+          margin-left: 1px;
+        }
       }
 
       .item-rating {
@@ -69,9 +75,9 @@
 
       .item-btns {
         display: flex;
+        margin: 15px 0;
 
         .addToCart {
-          margin-top: 15px;
           width: 140px;
           height: 40px;
           border: none;
@@ -84,7 +90,7 @@
         }
         .fav {
           font-size: 25px;
-          line-height: 70px;
+          line-height: 43px;
           margin-left: 10px;
           color: #4169e0;
           cursor: pointer;

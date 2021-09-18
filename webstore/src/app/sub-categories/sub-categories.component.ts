@@ -25,7 +25,7 @@ export class SubCategoriesComponent implements OnInit {
     this.subscription = activateRoute.params.subscribe((params) => {
       this.id = params.id;
       this.subId = params.subId;
-      this.service.test(this.id, this.subId).subscribe((val) => {
+      this.service.getItems(this.id, this.subId).subscribe((val) => {
         this.items = val;
         console.log(this.items);
       });
