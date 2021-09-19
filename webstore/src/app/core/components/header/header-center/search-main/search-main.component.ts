@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
 import { IItem } from 'src/app/shared/models/iitem.model';
@@ -16,7 +17,7 @@ export class SearchMainComponent implements OnInit {
   public searchValueUpdate = new Subject<string>();
   public isShown: boolean = false;
 
-  constructor(private service: SearchService) {
+  constructor(private service: SearchService, private router: Router) {
     this.searchValueUpdate
       .pipe(
         debounceTime(700),
@@ -36,4 +37,8 @@ export class SearchMainComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  public navToItem(id: string) {
+    this.router.navigate([`computers-peripherals/peripherals/${id}`]);
+  }
 }
