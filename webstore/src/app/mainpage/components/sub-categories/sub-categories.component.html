@@ -1,0 +1,71 @@
+<div class="item-page-container">
+  <div class="sort">
+    <span>sort:</span>
+    <span class="sorting" (click)="sortPrice()">price</span>
+    <span class="sorting" (click)="sortRate()">rating</span>
+  </div>
+
+  <div class="wrapper">
+    <div class="items-card-container">
+      <div
+        class="item"
+        *ngFor="
+          let item of items | sort: sortValue | slice: startPage:paginationLimit
+        "
+      >
+        <div
+          class="item-img"
+          [ngStyle]="{ 'background-image': 'url(' + item.imageUrls[0] + ')' }"
+        ></div>
+        <div
+          class="item-title"
+          [routerLink]="[item.id]"
+          routerLinkActive="active"
+        >
+          {{ item.name }}
+        </div>
+        <div class="item-price">
+          {{ item.price }}<span class="price-uni">&#x20BD;</span>
+        </div>
+        <div class="item-rating">rating {{ item.rating }}</div>
+        <div class="item-btns">
+          <button
+            appCart
+            [item]="item.id"
+            class="addToCart"
+            (click)="addTocart(item.id)"
+          >
+            add <i class="fas fa-shopping-cart"></i>
+          </button>
+          <button
+            appRemoveCart
+            [item]="item.id"
+            class="removeToCart"
+            (click)="removeFromCart(item.id)"
+          >
+            remove <i class="fas fa-shopping-cart"></i>
+          </button>
+          <div
+            class="fav"
+            appAddFav
+            [item]="item.id"
+            (click)="addToFav(item.id)"
+          >
+            <i class="far fa-star"></i>
+          </div>
+          <div
+            class="fav-added"
+            appRemoveFav
+            [item]="item.id"
+            (click)="removeFromFav(item.id)"
+          >
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="show-more">
+    <button (click)="showMoreItems()">Show More</button>
+  </div>
+</div>

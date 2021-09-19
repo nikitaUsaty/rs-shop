@@ -9,3 +9,11 @@ export interface IItem {
   isInCart: boolean;
   isFavorite: boolean;
 }
+
+export interface ICart {
+  id: string;
+}
+
+export interface Favorite {
+  id: string;
+}

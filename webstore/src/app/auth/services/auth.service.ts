@@ -4,6 +4,9 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { IUserModel } from 'src/app/shared/models/user.interface';
+import { Store } from '@ngrx/store';
+import { IAppState } from 'src/app/redux/app.state';
+import { addUser } from 'src/app/redux/actions/user.action';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +16,7 @@ export class AuthService {
   private isLogged$ = new BehaviorSubject(false);
   user: EventEmitter<IUserModel | null> = new EventEmitter();
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private store: Store<IAppState>) {}
 
   public getToken(login: string, password: string) {
     return this.http.post('http://localhost:3004/users/login', {
@@ -50,6 +53,15 @@ export class AuthService {
     };
     this.http
       .get<IUserModel>('http://localhost:3004/users/userInfo', httpOption)
-      .subscribe((val: any) => this.user.emit(val));
+      .subscribe((val: any) => {
+        console.log(val);
+
+        this.user.emit(val);
+      });
+    this.http
+      .get<IUserModel>('http://localhost:3004/users/userInfo', httpOption)
+      .subscribe((user) => {
+        this.store.dispatch(addUser({ user }));
+      });
   }
 }

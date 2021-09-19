@@ -1,4 +1,4 @@
-<div class="item-container">
+<div class="item-container" *ngIf="item">
   <div class="k">
     <div class="s">
       <swiper
@@ -31,6 +31,7 @@
       </swiper>
     </div>
     <div class="item">
+      <div class="rating" appRating></div>
       <div class="title">
         <h1>{{ item.name }}</h1>
       </div>
@@ -39,7 +40,13 @@
         }}<span class="price-uni">&#x20BD;</span>
       </div>
       <div class="item-btns">
-        <button class="addToCart">
+        <button
+          *ngIf="item"
+          class="addToCart"
+          appCart
+          [item]="item.id"
+          (click)="addTocart(item.id)"
+        >
           add <i class="fas fa-shopping-cart"></i>
         </button>
         <div class="fav">

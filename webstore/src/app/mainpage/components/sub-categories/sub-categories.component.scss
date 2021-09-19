@@ -1,15 +1,17 @@
 .item-page-container {
   display: flex;
   flex-direction: column;
-  margin: 20px 40px;
+  margin: 40px 0 auto;
+  position: relative;
 
   .sort {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     vertical-align: top;
-    margin-right: 140px;
+
     margin-bottom: 20px;
+    margin: 20px 140px;
 
     .sorting {
       color: #000;
@@ -21,11 +23,15 @@
       margin-right: 7px;
     }
   }
+  .wrapper {
+    max-width: 1980px;
+    margin: 0 auto;
+  }
 
   .items-card-container {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 100px;
+    margin-left: 25px;
 
     .item {
       display: flex;
@@ -44,7 +50,7 @@
         margin-top: 20px;
         width: 120px;
         height: 120px;
-        background-image: url("../../assets/icons/qustionmark.png");
+
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -88,7 +94,20 @@
           font-family: "HelveticaBold";
           cursor: pointer;
         }
-        .fav {
+
+        .removeToCart {
+          width: 140px;
+          height: 40px;
+          border: none;
+          font-size: 20px;
+          background-color: #e7e8ec;
+          color: #4169e0;
+          border-radius: 5px;
+          font-family: "HelveticaBold";
+          cursor: pointer;
+        }
+        .fav,
+        .fav-added {
           font-size: 25px;
           line-height: 43px;
           margin-left: 10px;
@@ -101,6 +120,7 @@
 
   .show-more {
     margin: 0 auto;
+    margin-bottom: 40px;
 
     button {
       margin-top: 15px;

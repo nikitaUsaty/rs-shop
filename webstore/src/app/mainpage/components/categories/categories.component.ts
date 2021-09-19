@@ -4,8 +4,8 @@ import { Subscription } from 'rxjs';
 import {
   ICategoriesModel,
   ISubCategories,
-} from '../shared/models/categories.interface';
-import { CategoriesService } from '../shared/services/categories.service';
+} from '../../../shared/models/categories.interface';
+import { CategoriesService } from '../../../shared/services/categories.service';
 
 @Component({
   selector: 'app-categories',

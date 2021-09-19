@@ -9,9 +9,7 @@
     </div>
     <div class="catalogue-subcategories">
       <ul *ngFor="let sub of subCat">
-        <a
-          ><li (click)="navToItems(sub.id)">{{ sub.id }}</li></a
-        >
+        <li (click)="navToItems(sub.id)">{{ sub.id }}</li>
       </ul>
     </div>
   </div>

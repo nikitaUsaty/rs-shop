@@ -10,23 +10,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainpageModule } from './mainpage/mainpage.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
-import { CategoriesComponent } from './categories/categories.component';
-import { CategoriesService } from './shared/services/categories.service';
-import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
+import { CategoriesComponent } from './mainpage/components/categories/categories.component';
+import { SubCategoriesComponent } from './mainpage/components/sub-categories/sub-categories.component';
 import { SortPipe } from './pipes/sort.pipe';
-import { ItemComponent } from './item/item.component';
+import { ItemComponent } from './mainpage/components/item/item.component';
 import { SwiperModule } from 'swiper/angular';
-import { BreadcrumbModule } from 'xng-breadcrumb';
-import { BreadcrumbService } from 'xng-breadcrumb';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './redux/reducers/app.reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CategoriesComponent,
-    SubCategoriesComponent,
-    SortPipe,
-    ItemComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -37,6 +32,19 @@ import { BreadcrumbService } from 'xng-breadcrumb';
     AuthModule,
     FormsModule,
     SwiperModule,
+    StoreModule.forRoot(appReducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true,
+        strictActionWithinNgZone: true,
+        strictActionTypeUniqueness: true,
+      },
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
