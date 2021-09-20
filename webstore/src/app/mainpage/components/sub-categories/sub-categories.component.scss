@@ -11,7 +11,7 @@
     vertical-align: top;
 
     margin-bottom: 20px;
-    margin: 20px 140px;
+    margin: 20px 340px;
 
     .sorting {
       color: #000;
@@ -31,7 +31,10 @@
   .items-card-container {
     display: flex;
     flex-wrap: wrap;
-    margin-left: 25px;
+
+    justify-content: center;
+    align-items: center;
+    margin: 0 270px;
 
     .item {
       display: flex;
@@ -50,10 +53,11 @@
         margin-top: 20px;
         width: 120px;
         height: 120px;
-
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
+        transition: 0.5s ease;
+        cursor: pointer;
       }
 
       .item-title {
@@ -133,5 +137,11 @@
       font-family: "HelveticaBold";
       cursor: pointer;
     }
+  }
+}
+
+.item:hover {
+  .item-img {
+    transform: scale(1.1);
   }
 }

@@ -49,8 +49,24 @@
         >
           add <i class="fas fa-shopping-cart"></i>
         </button>
-        <div class="fav">
+        <button
+          appRemoveCart
+          [item]="item.id"
+          class="removeToCart"
+          (click)="removeFromCart(item.id)"
+        >
+          remove <i class="fas fa-shopping-cart"></i>
+        </button>
+        <div class="fav" appAddFav [item]="item.id" (click)="addToFav(item.id)">
           <i class="far fa-star"></i>
+        </div>
+        <div
+          class="fav-added"
+          appRemoveFav
+          [item]="item.id"
+          (click)="removeFromFav(item.id)"
+        >
+          <i class="fas fa-star"></i>
         </div>
       </div>
     </div>

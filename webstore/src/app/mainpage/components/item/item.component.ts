@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { IItem } from '../../../shared/models/iitem.model';
 import { CategoriesService } from '../../../shared/services/categories.service';
 import SwiperCore, { Navigation, Thumbs } from 'swiper';
+import { CartService } from 'src/app/shared/services/cart.service';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Thumbs]);
@@ -20,10 +21,11 @@ export class ItemComponent implements OnInit {
   public thumbsSwiper: any;
   public img!: string[];
   @Input() rating!: number;
-  cartServ: any;
+
   constructor(
     private activateRoute: ActivatedRoute,
-    private service: CategoriesService
+    private service: CategoriesService,
+    private cartServ: CartService
   ) {
     this.subscription = activateRoute.params.subscribe((params) => {
       this.id = params.itemId;
@@ -39,12 +41,24 @@ export class ItemComponent implements OnInit {
   ngOnInit(): void {}
 
   public addTocart(id: string) {
+    if (!id) return;
+    console.log(id);
+
     this.cartServ.addToCart(id)?.subscribe();
     this.cartServ.updateUser();
   }
 
   public removeFromCart(id: string) {
     this.cartServ.removeFromCart(id).subscribe();
+    this.cartServ.updateUser();
+  }
+  public addToFav(id: string) {
+    this.cartServ.addToFavorite(id)?.subscribe();
+    this.cartServ.updateUser();
+  }
+
+  public removeFromFav(id: string) {
+    this.cartServ.removeFromFavorite(id).subscribe();
     this.cartServ.updateUser();
   }
 

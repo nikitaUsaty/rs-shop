@@ -147,12 +147,27 @@
       font-family: "HelveticaBold";
       cursor: pointer;
     }
-    .fav {
-      font-size: 25px;
-      line-height: 70px;
+
+    .removeToCart {
+      margin-top: 15px;
+      width: 140px;
+      height: 40px;
+      border: none;
+      font-size: 20px;
+      background-color: #e7e8ec;
+      color: #4169e0;
+      border-radius: 5px;
+      font-family: "HelveticaBold";
+      cursor: pointer;
+    }
+    .fav,
+    .fav-added {
+      font-size: 35px;
+      line-height: 67px;
       margin-left: 10px;
       color: #4169e0;
       cursor: pointer;
+      margin: 0 0 0 30px;
     }
   }
 }
