@@ -12,13 +12,18 @@
     </form>
   </div>
   <div class="search-reslut" *ngIf="isShown">
-    <div class="search-item" *ngFor="let card of searchCard">
+    <div
+      class="search-item"
+      *ngFor="let card of searchCard"
+      [routerLink]="['', card.category, card.subCategory, card.id]"
+      (click)="navToItem()"
+    >
       <div
         class="search-img"
         [ngStyle]="{ 'background-image': 'url(' + card.imageUrls[0] + ')' }"
       ></div>
       <div class="search-info">
-        <div class="name" (click)="navToItem(card.id)">{{ card.name }}</div>
+        <div class="name">{{ card.name }}</div>
         <div class="price">{{ card.price }} BYN</div>
       </div>
     </div>

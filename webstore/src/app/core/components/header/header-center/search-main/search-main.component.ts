@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged } from 'rxjs/operators';
@@ -16,6 +16,8 @@ export class SearchMainComponent implements OnInit {
   public searchCard!: IItem[];
   public searchValueUpdate = new Subject<string>();
   public isShown: boolean = false;
+
+  @Input() card!: IItem;
 
   constructor(private service: SearchService, private router: Router) {
     this.searchValueUpdate
@@ -38,7 +40,8 @@ export class SearchMainComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public navToItem(id: string) {
-    this.router.navigate([`computers-peripherals/peripherals/${id}`]);
+  public navToItem() {
+    this.isShown = false;
+    this.searchStr = '';
   }
 }

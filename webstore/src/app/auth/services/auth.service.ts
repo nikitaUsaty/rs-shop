@@ -58,7 +58,7 @@ export class AuthService {
 
         this.user.emit(val);
       });
-    this.http
+    return this.http
       .get<IUserModel>('http://localhost:3004/users/userInfo', httpOption)
       .subscribe((user) => {
         this.store.dispatch(addUser({ user }));

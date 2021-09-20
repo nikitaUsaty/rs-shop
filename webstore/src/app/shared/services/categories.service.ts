@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { forkJoin, Observable } from 'rxjs';
 import {
   ICategoriesModel,
   ISubCategories,
@@ -35,5 +35,15 @@ export class CategoriesService {
 
   public getItem(id: string): Observable<IItem> {
     return this.http.get<IItem>(`http://localhost:3004/goods/item/${id}`);
+  }
+
+  public getUsersItems(ids: string[]): Observable<IItem> {
+    const itemsArr: unknown[] = [];
+    ids.map((id) => {
+      itemsArr.push(
+        this.http.get<IItem>(`http://localhost:3004/goods/item/${id}`)
+      );
+    });
+    return forkJoin(itemsArr);
   }
 }

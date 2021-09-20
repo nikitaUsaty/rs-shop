@@ -30,4 +30,8 @@ export class AuthComponent implements OnInit {
   public closeDialog(): void {
     this.dialog.closeAll();
   }
+
+  ngOnDestroy(): void {
+    this.authServ.getUser()?.unsubscribe();
+  }
 }

@@ -14,12 +14,15 @@ export class RemoveFavDirective {
     private elRef: ElementRef,
     private renderer: Renderer2,
     private store: Store<IAppState>
-  ) {}
+  ) {
+    elRef.nativeElement.style.display = 'none';
+  }
 
   ngOnInit() {
     this.store
       .select<IUserModel[]>(selectUser)
       .subscribe((val: IUserModel[]) => {
+        if (!val) return;
         this.cart = val[0].favorites;
         this.isAdded(this.item);
       });

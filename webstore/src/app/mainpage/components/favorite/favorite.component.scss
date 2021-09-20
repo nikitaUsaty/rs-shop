@@ -1,0 +1,93 @@
+.favorite-container {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40px 0 auto;
+  position: relative;
+
+  .favorite-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 4px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+    width: 570px;
+    height: 200px;
+    text-align: center;
+    margin: 0 10px;
+    margin-bottom: 40px;
+
+    .favorite-img {
+      margin-top: 20px;
+      margin-left: 40px;
+      width: 120px;
+      height: 120px;
+
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .func-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .favorite-title {
+        font-family: "HelveticaBold";
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .favorite-rating {
+        margin-top: 10px;
+        cursor: initial;
+      }
+
+      .favorite-price {
+        font-family: "HelveticaBold";
+        font-size: 18px;
+        color: #613c3d;
+        margin: 10px 0;
+      }
+
+      .item-btns {
+        display: flex;
+        margin: 15px 0;
+
+        .addToCart {
+          width: 95px;
+          height: 29px;
+          border: none;
+          font-size: 20px;
+          background-color: #4169e0;
+          color: #fff;
+          border-radius: 5px;
+          font-family: "HelveticaBold";
+          cursor: pointer;
+        }
+
+        .removeToCart {
+          width: 140px;
+          height: 40px;
+          border: none;
+          font-size: 20px;
+          background-color: #e7e8ec;
+          color: #4169e0;
+          border-radius: 5px;
+          font-family: "HelveticaBold";
+          cursor: pointer;
+        }
+        .fav,
+        .fav-added {
+          font-size: 25px;
+          line-height: 29px;
+          margin-left: 10px;
+          color: #4169e0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

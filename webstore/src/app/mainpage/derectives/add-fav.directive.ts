@@ -22,6 +22,7 @@ export class AddFavDirective {
     this.store
       .select<IUserModel[]>(selectUser)
       .subscribe((val: IUserModel[]) => {
+        if (!val) return;
         this.cart = val[0].favorites;
         this.isAdded(this.item);
       });

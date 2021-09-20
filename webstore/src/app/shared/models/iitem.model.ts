@@ -8,6 +8,8 @@ export interface IItem {
   description: string;
   isInCart: boolean;
   isFavorite: boolean;
+  category: string;
+  subCategory: string;
 }
 
 export interface ICart {

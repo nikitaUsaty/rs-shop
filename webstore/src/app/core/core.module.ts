@@ -13,7 +13,7 @@ import {
 } from './components/header/header-center/login/login.component';
 import { CartComponent } from './components/header/header-center/cart/cart.component';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { FavoriteComponent } from './components/header/header-center/cart/favorite/favorite.component';
+
 import { ViewedComponent } from './components/header/header-center/viewed/viewed.component';
 import { CompareListComponent } from './components/header/header-center/compare-list/compare-list.component';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -35,8 +35,7 @@ import { RouterModule } from '@angular/router';
     HeaderBottomComponent,
     HeadCatListComponent,
     LoginComponent,
-    CartComponent,
-    FavoriteComponent,
+
     ViewedComponent,
     CompareListComponent,
     loginMenuComponent,

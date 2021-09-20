@@ -23,11 +23,13 @@ export class CartDirective implements OnInit {
     this.store
       .select<IUserModel[]>(selectUser)
       .subscribe((val: IUserModel[]) => {
+        if (val === undefined) return;
         this.cart = val[0].cart;
         this.isAdded(this.item);
       });
   }
   private isAdded(id: string) {
+    if (!this.cart) return;
     let isInCart = this.cart.includes(id);
     if (isInCart)
       this.renderer.setStyle(this.elRef.nativeElement, 'display', 'none');

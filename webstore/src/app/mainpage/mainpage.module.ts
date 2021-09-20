@@ -15,6 +15,9 @@ import { RatingDirective } from './derectives/rating.directive';
 import { RemoveCartDirective } from './derectives/remove-cart.directive';
 import { RemoveFavDirective } from './derectives/remove-fav.directive';
 import { AddFavDirective } from './derectives/add-fav.directive';
+import { FavoriteComponent } from './components/favorite/favorite.component';
+import { NgRatingBarModule } from 'ng-rating-bar';
+import { FavpageDirective } from './derectives/favpage.directive';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,8 @@ import { AddFavDirective } from './derectives/add-fav.directive';
     RemoveCartDirective,
     RemoveFavDirective,
     AddFavDirective,
+    FavoriteComponent,
+    FavpageDirective,
   ],
   imports: [
     CommonModule,
@@ -36,6 +41,7 @@ import { AddFavDirective } from './derectives/add-fav.directive';
     FormsModule,
     SwiperModule,
     ReactiveFormsModule,
+    NgRatingBarModule,
   ],
   exports: [MainpageComponent],
 })

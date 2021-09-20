@@ -4,9 +4,11 @@ import { CategoriesComponent } from './mainpage/components/categories/categories
 import { ItemComponent } from './mainpage/components/item/item.component';
 import { MainpageComponent } from './mainpage/pages/mainpage/mainpage.component';
 import { SubCategoriesComponent } from './mainpage/components/sub-categories/sub-categories.component';
+import { FavoriteComponent } from './mainpage/components/favorite/favorite.component';
 
 const routes: Routes = [
   { path: '', component: MainpageComponent },
+  { path: 'favorite', component: FavoriteComponent },
   { path: 'home', component: MainpageComponent },
   {
     path: ':id',
