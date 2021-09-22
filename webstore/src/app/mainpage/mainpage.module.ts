@@ -21,6 +21,8 @@ import { AmountDirective } from './derectives/amount.directive';
 import { CartComponent } from './components/cart/cart.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CartpageDirective } from './derectives/cartpage.directive';
+import { AppFeaturesComponent } from './components/app-features/app-features.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { CartpageDirective } from './derectives/cartpage.directive';
     AmountDirective,
     CartComponent,
     CartpageDirective,
+    AppFeaturesComponent,
   ],
   imports: [
     CommonModule,
@@ -48,6 +51,7 @@ import { CartpageDirective } from './derectives/cartpage.directive';
     ReactiveFormsModule,
     NgRatingBarModule,
     CarouselModule,
+    MatTabsModule,
   ],
   exports: [MainpageComponent],
 })
