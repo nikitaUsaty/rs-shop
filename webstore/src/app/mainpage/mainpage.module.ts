@@ -20,6 +20,7 @@ import { FavpageDirective } from './derectives/favpage.directive';
 import { AmountDirective } from './derectives/amount.directive';
 import { CartComponent } from './components/cart/cart.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { CartpageDirective } from './derectives/cartpage.directive';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     FavpageDirective,
     AmountDirective,
     CartComponent,
+    CartpageDirective,
   ],
   imports: [
     CommonModule,

@@ -24,10 +24,28 @@
         </div>
 
         <div class="item-btns">
-          <button class="removeToCart" (click)="removeFromCart(item.id)">
+          <button
+            class="removeToCart"
+            appCartpage
+            [item]="item.id"
+            (click)="removeFromCart(item.id)"
+          >
             remove <i class="fas fa-shopping-cart"></i>
           </button>
-          <div class="fav-added" (click)="removeFromFav(item.id)">
+          <div
+            class="fav"
+            appAddFav
+            [item]="item.id"
+            (click)="addToFav(item.id)"
+          >
+            <i class="far fa-star"></i>
+          </div>
+          <div
+            class="fav-added"
+            appRemoveFav
+            [item]="item.id"
+            (click)="removeFromFav(item.id)"
+          >
             <i class="fas fa-star"></i>
           </div>
         </div>
