@@ -10,15 +10,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainpageModule } from './mainpage/mainpage.module';
 import { AuthModule } from './auth/auth.module';
 import { FormsModule } from '@angular/forms';
-import { CategoriesComponent } from './mainpage/components/categories/categories.component';
-import { SubCategoriesComponent } from './mainpage/components/sub-categories/sub-categories.component';
-import { SortPipe } from './pipes/sort.pipe';
-import { ItemComponent } from './mainpage/components/item/item.component';
 import { SwiperModule } from 'swiper/angular';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './redux/reducers/app.reducer';
+import { RouterModule, ROUTES } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +29,7 @@ import { appReducers } from './redux/reducers/app.reducer';
     AuthModule,
     FormsModule,
     SwiperModule,
+    RouterModule,
     StoreModule.forRoot(appReducers, {
       runtimeChecks: {
         strictStateImmutability: true,

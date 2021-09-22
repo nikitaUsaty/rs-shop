@@ -11,7 +11,7 @@ import {
   loginMenuComponent,
   LoginComponent,
 } from './components/header/header-center/login/login.component';
-import { CartComponent } from './components/header/header-center/cart/cart.component';
+
 import { MatExpansionModule } from '@angular/material/expansion';
 
 import { ViewedComponent } from './components/header/header-center/viewed/viewed.component';

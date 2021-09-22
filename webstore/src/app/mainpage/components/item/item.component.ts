@@ -20,7 +20,6 @@ export class ItemComponent implements OnInit {
   public item!: IItem;
   public thumbsSwiper: any;
   public img!: string[];
-  @Input() rating!: number;
 
   constructor(
     private activateRoute: ActivatedRoute,
@@ -33,7 +32,7 @@ export class ItemComponent implements OnInit {
       this.service.getItem(this.id).subscribe((val) => {
         this.item = val;
         this.img = val.imageUrls;
-        this.rating = val.rating;
+        console.log(val.rating);
       });
     });
   }
@@ -42,7 +41,6 @@ export class ItemComponent implements OnInit {
 
   public addTocart(id: string) {
     if (!id) return;
-    console.log(id);
 
     this.cartServ.addToCart(id)?.subscribe();
     this.cartServ.updateUser();

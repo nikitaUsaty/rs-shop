@@ -11,13 +11,15 @@ import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SwiperModule } from 'swiper/angular';
 import { CartDirective } from './derectives/cart.directive';
-import { RatingDirective } from './derectives/rating.directive';
 import { RemoveCartDirective } from './derectives/remove-cart.directive';
 import { RemoveFavDirective } from './derectives/remove-fav.directive';
 import { AddFavDirective } from './derectives/add-fav.directive';
 import { FavoriteComponent } from './components/favorite/favorite.component';
 import { NgRatingBarModule } from 'ng-rating-bar';
 import { FavpageDirective } from './derectives/favpage.directive';
+import { AmountDirective } from './derectives/amount.directive';
+import { CartComponent } from './components/cart/cart.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,13 @@ import { FavpageDirective } from './derectives/favpage.directive';
     SortPipe,
     ItemComponent,
     CartDirective,
-    RatingDirective,
     RemoveCartDirective,
     RemoveFavDirective,
     AddFavDirective,
     FavoriteComponent,
     FavpageDirective,
+    AmountDirective,
+    CartComponent,
   ],
   imports: [
     CommonModule,
@@ -42,6 +45,7 @@ import { FavpageDirective } from './derectives/favpage.directive';
     SwiperModule,
     ReactiveFormsModule,
     NgRatingBarModule,
+    CarouselModule,
   ],
   exports: [MainpageComponent],
 })

@@ -54,8 +54,6 @@ export class AuthService {
     this.http
       .get<IUserModel>('http://localhost:3004/users/userInfo', httpOption)
       .subscribe((val: any) => {
-        console.log(val);
-
         this.user.emit(val);
       });
     return this.http

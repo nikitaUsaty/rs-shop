@@ -1,29 +1,66 @@
-import { Component, OnInit } from '@angular/core';
-import * as e from 'express';
+import { OnInit, ViewEncapsulation } from '@angular/core';
+
 import { CategoriesService } from 'src/app/shared/services/categories.service';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import KeenSlider from 'keen-slider';
 
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
   styleUrls: ['./mainpage.component.scss'],
 })
-export class MainpageComponent implements OnInit {
-  constructor(private service: CategoriesService) {}
-  public goods!: any[];
+export class MainpageComponent {
+  constructor() {}
+  @ViewChild('sliderRef')
+  sliderRef!: ElementRef<HTMLElement>;
+  interval: any = 0;
+  pause: boolean = false;
+  slider!: KeenSlider;
 
-  ngOnInit(): void {}
-  slides = [
-    {
-      image:
-        'data:image/jpeg;base64,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',
-    },
-    {
-      image:
-        'https://cdn21vek.by/img/galleries/487/87/2401100_atlant_59e8ae8104736.jpeg',
-    },
-    {
-      image:
-        'https://cdn21vek.by/img/galleries/670/660/preview_b/rcsk250m20w_beko_5ba395b802436.jpeg',
-    },
-  ];
+  currentSlide: number = 1;
+  dotHelper: Array<Number> = [];
+
+  resetInterval() {
+    clearInterval(this.interval);
+  }
+  setInterval() {
+    this.resetInterval();
+    this.interval = setInterval(() => {
+      if (!this.pause) {
+        this.slider.next();
+      }
+    }, 2000);
+  }
+
+  setPause(active: boolean) {
+    this.pause = active;
+    this.setInterval();
+  }
+
+  ngAfterViewInit() {
+    this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+      loop: true,
+      duration: 1000,
+      dragStart: () => {
+        this.setPause(true);
+      },
+      dragEnd: () => {
+        this.setPause(false);
+      },
+    });
+    this.setInterval();
+    setTimeout(() => {
+      this.slider = new KeenSlider(this.sliderRef.nativeElement, {
+        initial: this.currentSlide,
+        slideChanged: (s) => {
+          this.currentSlide = s.details().relativeSlide;
+        },
+      });
+      this.dotHelper = [...Array(this.slider.details().size).keys()];
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.slider) this.slider.destroy();
+  }
 }

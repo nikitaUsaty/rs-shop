@@ -33,7 +33,7 @@
     flex-wrap: wrap;
 
     justify-content: center;
-    align-items: center;
+
     margin: 0 270px;
 
     .item {
@@ -48,6 +48,33 @@
       text-align: center;
       margin: 0 10px;
       margin-bottom: 40px;
+      position: relative;
+
+      .egg-shape {
+        width: 27px;
+        height: 27px;
+        border-radius: 80% 30% 55% 50% / 55% 30% 80% 50%;
+        align-self: start;
+        transform: rotate(-45deg);
+        margin-top: 30px;
+
+        position: absolute;
+        right: 20px;
+      }
+      .red {
+        background-color: #3f0d12;
+        background-image: linear-gradient(315deg, #3f0d12 0%, #a71d31 74%);
+      }
+
+      .green {
+        background-color: #63d471;
+        background-image: linear-gradient(315deg, #63d471 0%, #233329 74%);
+      }
+
+      .yellow {
+        background-color: #fff293;
+        background-image: linear-gradient(315deg, #fff293 0%, #ffe884 74%);
+      }
 
       .item-img {
         margin-top: 20px;

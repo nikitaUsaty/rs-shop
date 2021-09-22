@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="favorite-container">
+    <div class="favorite-item" *ngFor="let item of items">
+      <div class="img-container">
+        <div
+          [routerLink]="['', item.category, item.subCategory, item.id]"
+          class="favorite-img"
+          [ngStyle]="{ 'background-image': 'url(' + item.imageUrls[0] + ')' }"
+        ></div>
+      </div>
+      <div class="func-container">
+        <div
+          class="favorite-title"
+          [routerLink]="['', item.category, item.subCategory, item.id]"
+        >
+          {{ item.name }}
+        </div>
+        <div class="favorite-rating">
+          <ng-rating-bar
+            [(value)]="item.rating"
+            [ratingCount]="5"
+            [disabled]="true"
+          ></ng-rating-bar>
+        </div>
+
+        <div class="item-btns">
+          <button class="removeToCart" (click)="removeFromCart(item.id)">
+            remove <i class="fas fa-shopping-cart"></i>
+          </button>
+          <div class="fav-added" (click)="removeFromFav(item.id)">
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+      <div class="price-usage">
+        <div class="cart-price">{{ item.price }} BYN</div>
+        <div class="counter">
+          <div class="increase change-btn" (click)="dcrs(item.id)">
+            <i class="fa fa-minus"></i>
+          </div>
+          <input
+            type="text"
+            name=""
+            class="counter-input"
+            [value]="counter[item.id]"
+            [disabled]
+          />
+          <div class="decrease change-btn" (click)="inc(item.id)">
+            <i class="fa fa-plus"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="subtotal">SUBTOTAL: {{ totalCost | number: "1.0-2" }}</div>
+</div>

@@ -13,6 +13,7 @@
           let item of items | sort: sortValue | slice: startPage:paginationLimit
         "
       >
+        <div class="egg-shape" appAmount [item]="item.availableAmount"></div>
         <div
           class="item-img"
           [ngStyle]="{ 'background-image': 'url(' + item.imageUrls[0] + ')' }"
