@@ -134,6 +134,50 @@
       }
     }
   }
+  .sub {
+    margin-left: 50px;
+  }
+  .form {
+    margin-top: 40px;
+    padding-top: 40px;
+    background-color: #fff9e4;
+    border-radius: 4px;
+    box-shadow: 0 0 25px #633c3d4f;
+  }
+  .form input {
+    border-radius: 4px;
+    outline: 0;
+    background: #fff;
+    width: 90%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px 10px;
+
+    box-sizing: border-box;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .form input:valid {
+    background-color: #e7f1fe;
+  }
+  .form button {
+    text-transform: uppercase;
+    outline: 0;
+    background-color: #000;
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    padding: 15px;
+    color: #ffffff;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.4 ease;
+    cursor: pointer;
+  }
+  .date-time {
+    margin-left: 10px;
+  }
 
   .subtotal {
     margin-top: 60px;
@@ -141,4 +185,19 @@
     font-size: 30px;
     font-family: "HelveticaConBlack";
   }
+
+  .comment {
+    min-width: 95%;
+    background: #fff;
+    padding-bottom: 100px !important;
+  }
+}
+.empty-cart {
+  min-height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  font-family: "HelveticaBold";
+  color: bisque;
 }

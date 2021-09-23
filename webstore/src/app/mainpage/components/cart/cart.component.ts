@@ -48,15 +48,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  public addTocart(id: string) {
-    this.cartServ.addToCart(id)?.subscribe();
-    this.cartServ.updateUser();
-  }
-
-  public removeFromCart(id: string) {
-    this.cartServ.removeFromCart(id).subscribe();
-    this.cartServ.updateUser();
-  }
   public addToFav(id: string) {
     this.cartServ.addToFavorite(id)?.subscribe();
     this.cartServ.updateUser();
@@ -88,5 +79,10 @@ export class CartComponent implements OnInit {
     for (let i = 0; i < prices.length; i++) {
       this.totalCost += +prices[i] * +quantity[i];
     }
+  }
+
+  public removeFromCart(id: string) {
+    this.cartServ.removeFromCart(id).subscribe();
+    this.cartServ.updateUser();
   }
 }

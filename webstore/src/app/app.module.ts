@@ -15,7 +15,7 @@ import { SwiperModule } from 'swiper/angular';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './redux/reducers/app.reducer';
-import { RouterModule, ROUTES } from '@angular/router';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,6 +25,7 @@ import { RouterModule, ROUTES } from '@angular/router';
     CoreModule,
     HttpClientModule,
     BrowserAnimationsModule,
+
     MainpageModule,
     AuthModule,
     FormsModule,

@@ -23,6 +23,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { CartpageDirective } from './derectives/cartpage.directive';
 import { AppFeaturesComponent } from './components/app-features/app-features.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -52,6 +57,11 @@ import { MatTabsModule } from '@angular/material/tabs';
     NgRatingBarModule,
     CarouselModule,
     MatTabsModule,
+    MatDatepickerModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+
+    MatInputModule,
   ],
   exports: [MainpageComponent],
 })
