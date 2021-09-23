@@ -1,0 +1,39 @@
+<div class="account">
+  <button
+    mat-button
+    [matMenuTriggerFor]="menu"
+    #menuTrigger
+    class="open-account__button"
+  >
+    <i class="far fa-user-circle"></i> ACCOUNT
+  </button>
+  <mat-menu #menu="matMenu">
+    <div class="profile-snippet">
+      <div class="singIn">
+        <i class="fas fa-user-circle"></i>
+        <p class="userName" *ngIf="userName">{{ userName }}</p>
+        <button class="signIn-button" (click)="openDialog()" *ngIf="!userName">
+          Log In
+        </button>
+        <button class="signIn-button" (click)="logOut()" *ngIf="userName">
+          Log Out
+        </button>
+      </div>
+      <div class="personal-interaction">
+        <div class="login-cart">
+          <div class="cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-text" [routerLink]="['/cart']"> Cart</span>
+          </div>
+          <div class="separate-border"></div>
+        </div>
+        <div class="personal-goods">
+          <div class="login-pop-list" [routerLink]="['/favorite']">
+            <i class="fas fa-star"></i>
+            <span>Favorite</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-menu>
+</div>

@@ -1,0 +1,16 @@
+<div class="catalogue-cont">
+  <div class="catalogue">
+    <div class="catalogue-categories">
+      <ul *ngFor="let category of categories" (mouseover)="getSubCat(category)">
+        <li>
+          {{ category.id }}
+        </li>
+      </ul>
+    </div>
+    <div class="catalogue-subcategories">
+      <ul *ngFor="let sub of subCat">
+        <li (click)="navToItems(sub.id)">{{ sub.id }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

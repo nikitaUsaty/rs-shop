@@ -1,0 +1,41 @@
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  min-width: 900px;
+  background: #feffca;
+  color: #613c3d;
+  font-family: "HelveticaConBlack";
+  a {
+    color: #613c3d;
+    font-family: "HelveticaConBlack";
+  }
+
+  .footer-top {
+    margin: 50px 200px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 25px;
+
+    .messengers {
+      font-family: "HelveticaConBlack";
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+    display: flex;
+    align-self: center;
+    margin-bottom: 30px;
+
+    i {
+      font-size: 50px;
+      margin: 0 20px;
+    }
+  }
+}
